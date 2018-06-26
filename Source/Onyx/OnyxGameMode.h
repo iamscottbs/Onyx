@@ -13,6 +13,14 @@ class AOnyxGameMode : public AGameModeBase
 
 public:
 	AOnyxGameMode();
+	virtual void BeginPlay() override;
+
+
+protected:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "CustomWidget", meta = (BlueprintProtected = "true"))
+		TSubclassOf<class UUserWidget> HUDWidgetClass;
+	UPROPERTY()
+		class UUserWidget* CurrentWidget;
 };
 
 

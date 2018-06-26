@@ -3,6 +3,7 @@
 #include "OnyxGameMode.h"
 #include "OnyxCharacter.h"
 #include "UObject/ConstructorHelpers.h"
+#include "Blueprint/UserWidget.h"
 
 AOnyxGameMode::AOnyxGameMode()
 {
@@ -11,5 +12,22 @@ AOnyxGameMode::AOnyxGameMode()
 	if (PlayerPawnBPClass.Class != NULL)
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
+	}
+}
+
+void AOnyxGameMode::BeginPlay() {
+	Super::BeginPlay();
+
+	//Initialize the HUD when game starts
+	if (HUDWidgetClass != nullptr) {
+
+		CurrentWidget = CreateWidget<UUserWidget>(GetWorld(), HUDWidgetClass);
+
+
+		if (CurrentWidget != nullptr) {
+
+			CurrentWidget->AddToViewport();
+
+		}
 	}
 }
