@@ -48,7 +48,11 @@ AOnyxCharacter::AOnyxCharacter()
 	CollectionSphere->SetupAttachment(RootComponent);
 	CollectionSphere->SetSphereRadius(200.0f);
 
+<<<<<<< HEAD
+	SpeedFactor = 1.5f;
+=======
 	SpeedFactor = 1;
+>>>>>>> 427d7d43df41350c01f3fe3913dd7d22c0dad351
 	BaseSpeed = GetCharacterMovement()->MaxWalkSpeed;
 	IsSprinting = false;
 	PrimaryActorTick.bCanEverTick = true;
