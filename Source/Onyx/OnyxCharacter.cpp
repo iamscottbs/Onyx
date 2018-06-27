@@ -59,6 +59,7 @@ AOnyxCharacter::AOnyxCharacter()
 
 	InitialStamina, CharacterStamina = 100.0f;
 	InitialHealth, CharacterHealth = 100.0f;
+	InitialShards, CharacterShards = 0.0f;
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
@@ -205,4 +206,15 @@ void AOnyxCharacter::UpdateHealth(float HealthUpdate)
 		CharacterHealth = 100;
 	if (GetCurrentHealth() < 0)
 		CharacterHealth = 0;
+}
+
+float AOnyxCharacter::GetCurrentShards()
+{
+	return CharacterShards;
+}
+void AOnyxCharacter::UpdateShards(float ShardUpdate)
+{
+	if (ShardUpdate == 4)
+		//EndGame
+		CharacterShards += ShardUpdate;
 }
