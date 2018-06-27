@@ -6,7 +6,7 @@
 AItemPickup::AItemPickup() {
 
 	//The base power of the pickup
-	PickupPower = 1.f;
+	PickupPower = 1.0f;
 
 	//Initialize the pickup type name
 	PickupType = TEXT("");
