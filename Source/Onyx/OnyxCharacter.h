@@ -50,6 +50,11 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Stats")
 		void UpdateHealth(float HealthUpdate);
 
+	UFUNCTION(BlueprintPure, Category = "Stats")
+		float  GetCurrentShards();
+	UFUNCTION(BlueprintCallable, Category = "Stats")
+		void UpdateShards(float ShardUpdate);
+
 
 protected:
 
@@ -67,6 +72,8 @@ protected:
 		float InitialStamina;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
 		float InitialHealth;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
+		float InitialShards;
 	/** Resets HMD orientation in VR. */
 	void OnResetVR();
 
@@ -114,4 +121,6 @@ private:
 		float CharacterStamina;
 	UPROPERTY(VisibleAnywhere, Category = "Stats")
 		float CharacterHealth;
+	UPROPERTY(VisibleAnywhere, Category = "Stats")
+		float CharacterShards;
 };
