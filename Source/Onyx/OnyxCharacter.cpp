@@ -214,7 +214,7 @@ float AOnyxCharacter::GetCurrentShards()
 }
 void AOnyxCharacter::UpdateShards(float ShardUpdate)
 {
-	if (ShardUpdate == 4)
+	//if (ShardUpdate == 4)
 		//EndGame
 		CharacterShards += ShardUpdate;
 }
